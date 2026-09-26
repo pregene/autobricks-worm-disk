@@ -1,0 +1,356 @@
+# Autobricks Source-Available License
+
+Version 1.0
+
+Copyright (c) 2026 Autobricks.
+All rights reserved.
+
+## 1. Definitions
+
+For the purposes of this License:
+
+**"Software"** means the source code, executable code, scripts, configuration files, documentation, and other materials distributed with this License.
+
+**"Copyright Holder"** means Autobricks or the person or organization legally authorized to license the Software.
+
+**"You"** means any individual or legal entity exercising permissions granted under this License.
+
+**"Modification"** means any change, addition, deletion, adaptation, translation, transformation, patch, alteration, or other modification of the Software or any portion of it.
+
+**"Derivative Work"** means any work based upon, incorporating, modifying, extending, adapting, or otherwise derived from the Software.
+
+**"Redistribution"** means providing, publishing, transferring, distributing, sublicensing, selling, hosting for download, or otherwise making copies of the Software available to a third party.
+
+---
+
+## 2. Grant of Permission
+
+Subject to the terms and conditions of this License, the Copyright Holder grants You a limited, non-exclusive, non-transferable, royalty-free right to:
+
+1. view and inspect the source code of the Software;
+2. download and copy the Software for personal, educational, evaluation, research, testing, development, or internal organizational use;
+3. execute and operate the Software in its original, unmodified form;
+4. install the Software on systems owned or controlled by You or Your organization;
+5. make backup or archival copies of the Software; and
+6. redistribute the Software only in its complete and unmodified form, provided that all copyright notices, license notices, attribution notices, and other legal notices remain intact.
+
+No rights are granted except those expressly stated in this License.
+
+---
+
+## 3. Modification Prohibited
+
+You may not modify the Software without prior written permission from the Copyright Holder.
+
+Without limiting the foregoing, You may not:
+
+1. modify, edit, alter, patch, or replace any portion of the source code;
+2. add or remove functionality;
+3. modify configuration defaults for the purpose of creating a separately distributed version of the Software;
+4. create a fork intended to distribute a modified implementation of the Software;
+5. translate, adapt, port, convert, or transform the Software into another programming language or platform for redistribution;
+6. incorporate modified portions of the Software into another software product;
+7. create or distribute patches that modify the behavior of the Software;
+8. create derivative works based on the Software; or
+9. distribute, publish, or otherwise make available any modified version of the Software.
+
+Modifications made solely by the Copyright Holder or with prior written authorization from the Copyright Holder are not prohibited by this section.
+
+---
+
+## 4. Redistribution of Unmodified Copies
+
+You may redistribute the Software only if the Software remains in its original and unmodified form.
+
+Any redistribution must:
+
+1. include this License in its entirety;
+2. preserve all copyright notices;
+3. preserve all attribution notices;
+4. preserve all security notices and disclaimers;
+5. preserve the original project name and version information;
+6. clearly identify the Software as originating from the official Autobricks project; and
+7. not imply that You are the author, owner, or official maintainer of the Software.
+
+You may not remove, obscure, alter, or replace any copyright, trademark, attribution, security, or licensing notice contained in the Software.
+
+---
+
+## 5. Source Code Availability
+
+The public availability of the source code does not constitute a waiver of copyright or grant permission to modify the Software.
+
+The Software is made available in source form for purposes including:
+
+* transparency;
+* security inspection;
+* audit and verification;
+* interoperability analysis;
+* educational use;
+* evaluation;
+* testing; and
+* operational review.
+
+Access to the source code does not grant rights to create or distribute modified or derivative versions.
+
+This License is a **source-available license** and is not intended to qualify as an Open Source license under the Open Source Initiative definition.
+
+---
+
+## 6. GitHub and Repository Forks
+
+If the Software is hosted on GitHub or another source-code hosting platform, use of platform features such as viewing, cloning, or forking a repository may be subject to the terms of that platform.
+
+A repository fork does not grant permission to modify, publish, distribute, or operate a modified version of the Software beyond the rights expressly granted by this License.
+
+A fork may be maintained for archival, review, testing, evaluation, or contribution purposes, but redistribution or publication of a modified version requires prior written permission from the Copyright Holder.
+
+---
+
+## 7. Contributions
+
+You may submit proposed changes, patches, pull requests, bug fixes, documentation changes, or other contributions to the official Software repository.
+
+Submitting a contribution does not grant You the right to distribute a modified version of the Software independently.
+
+Unless otherwise agreed in writing, by submitting a contribution You grant the Copyright Holder a perpetual, worldwide, non-exclusive, irrevocable, royalty-free license to use, reproduce, modify, integrate, sublicense, and distribute the submitted contribution as part of the Software.
+
+The Copyright Holder is not obligated to accept any contribution.
+
+---
+
+## 8. Reverse Engineering
+
+Except where such restriction is prohibited by applicable law, You may not:
+
+1. reverse engineer the executable form of the Software;
+2. decompile or disassemble compiled components;
+3. circumvent technical protection mechanisms;
+4. bypass security controls;
+5. attempt to extract protected internal components; or
+6. use reverse engineering to create a competing or derivative implementation.
+
+This section does not prohibit inspection of source code that has been intentionally published by the Copyright Holder.
+
+---
+
+## 9. Security Features
+
+You may not remove, disable, bypass, weaken, circumvent, or alter security-related functionality of the Software.
+
+This includes, but is not limited to:
+
+* integrity protection;
+* tamper protection;
+* audit logging;
+* authentication;
+* authorization;
+* cryptographic verification;
+* certificate validation;
+* retention controls;
+* WORM protections;
+* access-control mechanisms; and
+* security event recording.
+
+Any modification intended to bypass or weaken such protections requires prior written permission from the Copyright Holder.
+
+---
+
+## 10. Use of the Autobricks Name and Trademarks
+
+This License does not grant permission to use the names:
+
+**Autobricks**
+
+or any related product names, logos, trademarks, service marks, domain names, or branding, except solely as necessary to accurately identify the original Software.
+
+You may not:
+
+1. represent a modified product as an official Autobricks product;
+2. imply endorsement, certification, approval, or sponsorship by Autobricks;
+3. use the Autobricks name to market a modified or derivative product;
+4. use confusingly similar branding; or
+5. remove or replace original Autobricks attribution.
+
+Any use of Autobricks trademarks beyond factual identification requires prior written permission.
+
+---
+
+## 11. Commercial Use
+
+Commercial use of the original, unmodified Software is permitted unless otherwise stated in accompanying product-specific terms.
+
+Commercial use does not grant permission to modify, sublicense, rebrand, or distribute derivative versions of the Software.
+
+If You wish to modify, integrate, rebrand, sublicense, or distribute the Software as part of a commercial product, You must obtain separate written permission or a commercial license from the Copyright Holder.
+
+---
+
+## 12. Integration With Other Software
+
+You may operate the Software together with independent applications, operating systems, databases, services, devices, libraries, APIs, or network systems.
+
+Normal use of documented interfaces, network protocols, command-line interfaces, APIs, configuration mechanisms, IPC mechanisms, or other officially supported integration methods does not by itself constitute a Modification.
+
+However, copying source code from the Software into another project, modifying internal components, or producing a derivative implementation remains prohibited without prior written permission.
+
+---
+
+## 13. Internal Configuration
+
+This License does not prohibit normal configuration necessary to operate the Software.
+
+You may change runtime configuration values exposed by the Software for their intended purpose, including configuration related to:
+
+* network addresses;
+* ports;
+* log destinations;
+* file paths;
+* retention periods;
+* certificates;
+* authentication settings;
+* access-control settings;
+* service settings; and
+* other documented operational parameters.
+
+Changing configuration values through documented mechanisms is not considered a Modification of the Software.
+
+Modification of source code, executable code, internal scripts, or protected implementation logic remains subject to Section 3.
+
+---
+
+## 14. No Sublicensing
+
+You may not sublicense the Software or grant third parties rights greater than those granted to You under this License.
+
+Any redistribution must remain subject to this License.
+
+---
+
+## 15. Ownership
+
+The Software is licensed, not sold.
+
+All copyrights, intellectual property rights, title, and ownership interests in the Software remain with the Copyright Holder.
+
+No ownership rights are transferred under this License.
+
+---
+
+## 16. No Patent License Except as Explicitly Granted
+
+Except to the extent expressly required for ordinary authorized use of the Software, no patent rights are granted under this License.
+
+Nothing in this License shall be interpreted as granting rights to patents, trademarks, trade secrets, or other intellectual property of the Copyright Holder unless explicitly stated.
+
+---
+
+## 17. Compliance With Law
+
+You are responsible for using the Software in compliance with all applicable laws and regulations.
+
+You may not use the Software where such use is prohibited by applicable law.
+
+---
+
+## 18. Termination
+
+Your rights under this License automatically terminate if You violate any term of this License.
+
+Upon termination, You must cease any unauthorized use, modification, or redistribution of the Software.
+
+The Copyright Holder may, at its discretion, provide written permission to restore Your rights after a violation has been corrected.
+
+Sections concerning ownership, trademarks, warranty disclaimer, limitation of liability, and other provisions that by their nature should survive termination shall remain effective after termination.
+
+---
+
+## 19. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO WARRANTIES OF:
+
+* MERCHANTABILITY;
+* FITNESS FOR A PARTICULAR PURPOSE;
+* NON-INFRINGEMENT;
+* RELIABILITY;
+* AVAILABILITY;
+* SECURITY;
+* ACCURACY; AND
+* FITNESS FOR ANY PARTICULAR OPERATIONAL ENVIRONMENT.
+
+THE COPYRIGHT HOLDER DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE, UNINTERRUPTED, OR SUITABLE FOR ANY PARTICULAR SYSTEM OR SECURITY REQUIREMENT.
+
+---
+
+## 20. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COPYRIGHT HOLDER, CONTRIBUTORS, MAINTAINERS, OR DISTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR OTHER DAMAGES ARISING FROM OR RELATED TO THE SOFTWARE.
+
+THIS INCLUDES, WITHOUT LIMITATION:
+
+* LOSS OF DATA;
+* LOSS OF PROFITS;
+* LOSS OF REVENUE;
+* BUSINESS INTERRUPTION;
+* SYSTEM FAILURE;
+* SECURITY INCIDENTS;
+* LOSS OR CORRUPTION OF LOG DATA;
+* SERVICE INTERRUPTION; OR
+* PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES.
+
+THIS LIMITATION APPLIES WHETHER THE CLAIM IS BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+---
+
+## 21. Additional Permissions
+
+The Copyright Holder may grant additional permissions through a separate written agreement.
+
+Examples may include permission to:
+
+* modify the Software;
+* develop derivative works;
+* redistribute modified versions;
+* integrate the Software into another product;
+* rebrand the Software;
+* commercially redistribute the Software; or
+* obtain a separate commercial license.
+
+Such permission must be expressly granted in writing by the Copyright Holder.
+
+---
+
+## 22. Severability
+
+If any provision of this License is determined to be invalid, unlawful, or unenforceable, the remaining provisions shall remain in full force and effect to the maximum extent permitted by law.
+
+---
+
+## 23. Entire License
+
+This License constitutes the terms under which the Software is provided unless a separate written agreement between You and the Copyright Holder expressly provides otherwise.
+
+No oral statement, repository discussion, issue comment, pull request, documentation statement, or other communication shall modify this License unless expressly authorized in writing by the Copyright Holder.
+
+---
+
+## 24. Acceptance
+
+By downloading, copying, installing, executing, using, or redistributing the Software, You acknowledge that You have read and agree to comply with the terms of this License.
+
+If You do not agree to these terms, You must not exercise any rights granted by this License.
+
+---
+
+## Permission for Modification
+
+For permission to modify, redistribute modified versions, commercially integrate, or otherwise use the Software beyond the scope of this License, contact the Copyright Holder through the official Autobricks project repository or other officially designated contact channel.
+
+---
+
+**Autobricks Source-Available License 1.0**
+
+Copyright (c) 2026 Autobricks.
+All rights reserved.
