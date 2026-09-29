@@ -16,6 +16,73 @@ The command is `ab-worm-disk`, the service is `ab-worm-disk.service`, and the
 Debian package is `autobricks-worm-disk`. See [VERSION](VERSION) for the product
 version. This product supports **Linux only**.
 
+## How this differs from Autobricks WORM
+
+Choose [Autobricks WORM](https://github.com/pregene/autobricks-worm) when the
+storage source is an existing directory. Choose **Autobricks WORM Disk** when a
+dedicated disk partition should be initialized, encrypted, and managed as a
+WORM volume by the installer and service.
+
+The difference is the managed storage volume. Applications still use ordinary
+files through FUSE, but the disk product owns the setup and lifecycle of the
+selected partition, its LUKS mapping, and its private backing filesystem.
+
+| Area | Autobricks WORM | Autobricks WORM Disk |
+| --- | --- | --- |
+| Storage source | A backing directory | A dedicated partition, with a private ext4 filesystem behind the WORM mount |
+| Append and retention policy | Committed-prefix protection and expiry-based deletion | The same WORM core and policy |
+| Encryption setup | Not supplied by the backing-directory interface | New installations require LUKS2 and generate a protected disk-unlock credential |
+| Metadata access | Read-only sibling `.meta` entries | Hidden internal metadata, with a read-only `checksum FILEPATH` command |
+| Installation | Directory-backed service setup | Partition selection, mount settings, retention, and required encryption |
+| Service shutdown | Unmount the WORM interface | Unmount WORM, unmount the private filesystem, then close the LUKS mapping |
+
+### A dedicated encrypted volume
+
+The installer selects an unused, writable partition rather than asking for a
+backing directory. After explicit confirmation, it initializes that partition
+with LUKS2 and creates the ext4 filesystem inside the encrypted volume. LUKS
+is required for new installations and cannot be unchecked. This works with
+suitable HDD, SSD, or USB partitions; it is not limited to USB storage.
+
+The encrypted partition can contain an ongoing recording while applications
+see only the WORM mount. When the mapping is closed, reading the medium requires
+a valid unlock credential. This adds protection for a removed or separately
+accessed disk that the original backing-directory interface does not itself
+provide. It does not protect against an administrator who has the locally
+stored credential or access to the open mapping.
+
+### One service manages the storage layers
+
+Starting the service opens LUKS, mounts ext4 privately, and exposes the WORM
+interface at the configured public mount point. Stopping it reverses that order:
+public WORM mount, private ext4 mount, then LUKS mapping. Cleanup errors remain
+errors; a stopped service is not by itself proof that encrypted access is closed.
+Applications do not need to open LUKS or mount the backing filesystem themselves.
+
+### File metadata without exposing internal files
+
+The original project exposes read-only sibling `.meta` entries. The disk product
+hides those entries from listings and direct access. Applications instead use
+`ab-worm-disk checksum FILEPATH` to read the committed position, checksum, and
+retention fields through the mounted file. This keeps the normal file namespace
+free of internal metadata while retaining the checkpoint information needed
+for integrity checks.
+
+The source is a block device, not a user-selected folder. A mount point such as
+`/mnt/worm-disk` remains a directory through which applications access files.
+The private ext4 filesystem supplies storage to the original WORM core; ext4
+itself does not enforce WORM restrictions.
+
+```mermaid
+flowchart TD
+    App["Applications: ordinary file reads and appends"] --> Mount["Public WORM mount: /mnt/worm-disk"]
+    Mount --> Policy["Append, namespace, and retention checks"]
+    Policy --> Store["Original Autobricks WORM storage core"]
+    Store --> FS["Private ext4 filesystem"]
+    FS --> Mapping["Opened LUKS2 mapping"]
+    Mapping --> Disk["Dedicated encrypted partition"]
+```
+
 ## Why appendable WORM?
 
 Audit logs, event streams, and sequential recordings need to keep growing
@@ -47,35 +114,6 @@ points even after the file has grown.
 Mutable databases and applications that overwrite, truncate, or rename files
 need separate mutable storage. Appendable WORM is suited to sequential records;
 it does not make every application compatible with append-only access.
-
-## What the disk product adds
-
-Autobricks WORM Disk preserves the original WORM behavior while changing how
-storage is supplied and managed.
-
-| Area | Autobricks WORM | Autobricks WORM Disk |
-| --- | --- | --- |
-| Storage source | A backing directory | A dedicated partition, with a private ext4 filesystem behind the WORM mount |
-| Append and retention policy | Committed-prefix protection and expiry-based deletion | The same WORM core and policy |
-| Encryption setup | Not supplied by the backing-directory interface | New installations require LUKS2 and generate a protected disk-unlock credential |
-| Metadata access | Read-only sibling `.meta` entries | Hidden internal metadata, with a read-only `checksum FILEPATH` command |
-| Installation | Directory-backed service setup | Partition selection, mount settings, retention, and required encryption |
-| Service shutdown | Unmount the WORM interface | Unmount WORM, unmount the private filesystem, then close the LUKS mapping |
-
-The source is a block device, not a user-selected folder. A mount point such as
-`/mnt/worm-disk` remains a directory through which applications access files.
-The private ext4 filesystem supplies storage to the original WORM core; ext4
-itself does not enforce WORM restrictions.
-
-```mermaid
-flowchart TD
-    App["Applications: ordinary file reads and appends"] --> Mount["Public WORM mount: /mnt/worm-disk"]
-    Mount --> Policy["Append, namespace, and retention checks"]
-    Policy --> Store["Original Autobricks WORM storage core"]
-    Store --> FS["Private ext4 filesystem"]
-    FS --> Mapping["Opened LUKS2 mapping"]
-    Mapping --> Disk["Dedicated encrypted partition"]
-```
 
 ## How an append protects existing records
 
@@ -207,8 +245,31 @@ does not prove that the LUKS mapping has closed.
 Ubuntu package targets are **22.04 and 24.04**, each for **amd64 and arm64**.
 See the [Releases page](https://github.com/pregene/autobricks-worm-disk/releases)
 for published downloads and [INSTALL.md](INSTALL.md) for installation details.
-Install a package matching your distribution and architecture with APT so
-required dependencies are resolved:
+### Required system packages
+
+LUKS support is provided by **cryptsetup**, the userspace tools used to create,
+open, and close the encrypted volume. Install it on Ubuntu with:
+
+```sh
+sudo apt update
+sudo apt install cryptsetup
+```
+
+The WORM mount also requires **fuse3** and kernel FUSE support (`/dev/fuse`).
+**e2fsprogs** provides the ext4 formatting tools. Python 3, util-linux, systemd,
+and udev support the installer, device checks, service lifecycle, and device
+discovery. To install these prerequisites explicitly:
+
+```sh
+sudo apt install cryptsetup fuse3 e2fsprogs python3 util-linux systemd udev
+```
+
+The Debian package declares these dependencies. Installing the local package
+with APT resolves missing dependencies automatically; `dpkg -i` alone does not.
+
+### Install and select the partition
+
+Install a package matching your distribution and architecture:
 
 ```sh
 sudo apt install ./autobricks-worm-disk-<version>-ubuntu-<os-version>-<arch>.deb
