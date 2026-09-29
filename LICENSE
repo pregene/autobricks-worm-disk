@@ -9,9 +9,9 @@ All rights reserved.
 
 ## 1. Purpose and License Classification
 
-This License permits the Software to be publicly available in source-code form for inspection, audit, evaluation, testing, authorized use, and redistribution of unmodified copies.
+This License makes source code available for reading, inspection, audit, analysis, and reference when independently developing other software. You may install, execute, evaluate, and test Official Packages and Unmodified Builds.
 
-This License does **not** grant a general right to modify the Software or create derivative works.
+This License permits building unmodified source code, using and redistributing the resulting Unmodified Builds, and including them in Your own commercial products. It does **not** grant a general right to modify the Software, build or use modified versions, or create derivative works.
 
 Accordingly, this License is a **source-available license** and is not intended to qualify as an Open Source license under the Open Source Initiative definition.
 
@@ -83,6 +83,18 @@ Changes expressly permitted under Section 5, **Runtime Configuration and Normal 
 * selling copies; or
 * otherwise supplying copies to a third party.
 
+### 2.7 Official Package
+
+**"Official Package"** means an executable distribution, installer, binary archive, or update built or expressly approved for release by the Licensor and supplied through an official Autobricks distribution channel. A complete, unmodified copy of such a package redistributed under Section 6 remains an Official Package. A third-party build is not an Official Package merely because its source code, version, name, or output matches an official release.
+
+### 2.8 Build
+
+**"Build"** means compiling, assembling, linking, transpiling, or otherwise transforming source code or intermediate code of the Software into executable code, object code, libraries, test binaries, or installation packages. This includes local builds, automated or CI builds, reproducible builds, and builds for evaluation, testing, or personal use, whether or not the source code is modified. Ordinary installation, unpacking, runtime loading, and configuration of an Official Package as supplied and documented by the Licensor are not Builds.
+
+### 2.9 Unmodified Build
+
+**"Unmodified Build"** means a Build produced from the original source code supplied by the Licensor without editing that source code, implementation scripts, build logic, or dependency declarations. Using documented build options and supported toolchains, and changes to generated artifacts or version metadata made automatically by the supplied build process, do not by themselves constitute a prohibited Modification. This exception does not permit manual source edits, patches, removal of functionality, or weakening of security controls. An Unmodified Build is not an Official Package.
+
 ---
 
 ## 3. Grant of Permission
@@ -93,22 +105,25 @@ Subject to all terms of this License, the Licensor grants You a worldwide, non-e
 2. download the Software;
 3. copy the Software;
 4. perform security review and source-code audit;
-5. evaluate and test the Software;
-6. install the original Software;
-7. execute and operate the original, unmodified Software;
-8. use the original Software for personal, educational, research, internal organizational, or commercial purposes;
+5. evaluate and test Official Packages and Unmodified Builds;
+6. install Official Packages and Unmodified Builds;
+7. execute and operate Official Packages and Unmodified Builds;
+8. use Official Packages and Unmodified Builds for personal, educational, research, internal organizational, or commercial purposes;
 9. develop integrations using documented interfaces without modifying the Software;
 10. configure the Software as expressly permitted under Section 5;
 11. make backup and archival copies; and
-12. redistribute complete and unmodified copies in accordance with Section 6.
+12. redistribute unmodified source distributions, Official Packages, and Unmodified Builds in accordance with Section 6;
+13. refer to the source code to understand ideas, algorithms, behavior, and interfaces when independently developing other software, without copying, adapting, translating, or incorporating protected implementation code; and
+14. download and Build the original, unmodified source code, including in local or CI environments, to produce Unmodified Builds for use, evaluation, testing, and redistribution; and
+15. include Official Packages or Unmodified Builds as unmodified components in Your own products, and sell, license, supply, and commercially distribute those products, subject to Sections 6 and 8.
 
-No permission to modify the Software is granted except where expressly authorized in writing by the Licensor.
+No permission to modify the Software or build, use, incorporate, or redistribute modified versions is granted except where expressly authorized in writing by the Licensor.
 
 ---
 
-## 4. Modification and Derivative Works Prohibited
+## 4. Modifications, Modified Builds, and Derivative Works Prohibited
 
-You may not modify the Software without prior written permission from the Licensor.
+You may Build the original source code and use Unmodified Builds under Section 3. Without prior written permission from the Licensor, You may not modify the Software or build, install, execute, operate, test, use, publish, or redistribute a modified version. Redistribution of self-built binaries or packages is governed by Section 6.
 
 Without prior written permission, You may not:
 
@@ -137,9 +152,9 @@ Without prior written permission, You may not:
 
 This Section does not prohibit software that is independently developed without copying, modifying, adapting, or deriving protected expression from the Software.
 
-Modifications created directly by the Licensor are not restricted by this Section.
+Builds and Modifications created directly by the Licensor are not restricted by this Section.
 
-Modifications expressly authorized in writing by the Licensor are permitted only within the scope of that authorization.
+Builds and Modifications expressly authorized in writing by the Licensor are permitted only within the scope of that authorization. Build instructions may be used for Unmodified Builds under Section 3; they do not authorize modifications or modified builds.
 
 ---
 
@@ -214,7 +229,11 @@ except where such changes are expressly authorized in writing by the Licensor.
 
 ## 6. Redistribution of Unmodified Copies
 
-You may redistribute the Software only in its original and unmodified form.
+You may redistribute complete, unmodified source distributions, Official Packages, and Unmodified Builds, including binaries or libraries compiled from the original, unmodified source. You may include Official Packages or Unmodified Builds as components of Your own products and sell or otherwise commercially distribute those products. No separate permission or royalty is required under this License for these activities.
+
+Product packaging, installers, and independent integration code may accompany the unmodified component. They must not alter its implementation, remove required notices, or bypass its security controls. Including the component in a larger product does not require distribution of the entire original repository or impose this License on Your independently developed product code. Recipients must receive this License and the applicable notices with the component and receive the same rights to the component under this License. This permission does not authorize copying protected source implementation into Your product's source or incorporating a modified build.
+
+Recipients may Build the unmodified source and use, incorporate, and redistribute Unmodified Builds under the same terms. A redistributed Unmodified Build must not be represented as an Official Package unless approved by the Licensor.
 
 Redistributed copies must preserve:
 
@@ -262,14 +281,18 @@ However, the ability to technically create a repository fork does not by itself 
 * create a Derivative Work; or
 * relicense the Software.
 
+You may Build an unmodified fork or source copy, including through automated CI, for use, product integration, and redistribution under Sections 3 and 6. Forking does not authorize source modifications or modified builds.
+
 An unmodified fork or repository copy may be maintained for purposes such as:
 
 * archival;
 * inspection;
 * security review;
 * evaluation;
-* testing; or
-* analysis.
+* static analysis; or
+* reference for independent development.
+
+Runtime testing may use Official Packages or Unmodified Builds.
 
 Any Modification requires prior written permission from the Licensor.
 
@@ -277,7 +300,7 @@ Any Modification requires prior written permission from the Licensor.
 
 ## 8. Integration With Other Software
 
-You may integrate and operate the Software with independent systems through documented or ordinarily supported interfaces.
+You may integrate and operate Official Packages and Unmodified Builds with independent systems through documented or ordinarily supported interfaces. You may refer to published source code to understand those interfaces and independently develop integrations, subject to Sections 3 and 4.
 
 Permitted integrations may include:
 
@@ -300,7 +323,7 @@ Permitted integrations may include:
 * certificate systems; and
 * other documented interfaces.
 
-Using an interface to communicate with the Software does not by itself create a Derivative Work.
+Using an interface to communicate with the Software does not by itself create a Derivative Work. Including an Official Package or Unmodified Build as an unmodified component in an independently developed product is expressly permitted, including commercial sale and distribution. The prohibition on Derivative Works does not prohibit this expressly permitted combination. The component remains under this License; Your independent product code may use its own license.
 
 However, this Section does not authorize:
 
@@ -407,7 +430,7 @@ The Licensor is not required to accept or use any contribution.
 
 ## 12. Commercial Use
 
-Commercial use of the original, unmodified Software is permitted.
+Commercial use of Official Packages and Unmodified Builds is permitted. You may include Official Packages or Unmodified Builds in Your own commercial products and sell or distribute those products under Sections 6 and 8. Commercial use does not authorize source modifications or building, using, incorporating, or redistributing modified versions.
 
 This may include operating the original Software:
 
@@ -429,7 +452,7 @@ Without prior written permission from the Licensor, You may not commercially:
 * incorporate modified source code into another product; or
 * offer a modified version as a hosted or managed service.
 
-Commercial redistribution of the original and unmodified Software remains subject to Section 6.
+Commercial redistribution of unmodified source distributions, Official Packages, and Unmodified Builds, including as components in Your own products, remains subject to Section 6.
 
 ---
 
@@ -659,6 +682,9 @@ The Licensor may grant additional permissions through a separate written agreeme
 
 Such permission may include authorization to:
 
+* Build from modified source code;
+* install, execute, test, use, or redistribute specifically authorized builds;
+
 * modify the Software;
 * create a Derivative Work;
 * maintain a private modified version;
@@ -740,6 +766,9 @@ Rights granted independently by applicable law or by a third-party license are n
 
 Prior written permission from the Licensor is required before You:
 
+* Build from modified source code;
+* install, execute, test, use, or publish a modified build;
+
 * modify the Software;
 * prepare an unauthorized patch;
 * publish modified source code;
@@ -766,18 +795,22 @@ If this summary conflicts with another provision of this License, the full Licen
 * view the source code;
 * inspect and audit the source code;
 * download the Software;
-* use the original Software;
-* install the original Software;
-* operate the original Software;
-* use the original Software commercially;
+* refer to source code when independently developing other software without copying protected implementation code;
+* download and Build the original, unmodified source code;
+* include Official Packages or Unmodified Builds in Your own products and sell or distribute those products;
+* install and use Official Packages and Unmodified Builds;
+* operate Official Packages and Unmodified Builds commercially;
 * change documented runtime configuration;
 * set retention periods through supported configuration;
 * integrate through documented interfaces;
 * make backups;
 * maintain an unmodified repository copy; and
-* redistribute complete and unmodified copies.
+* redistribute unmodified source distributions, Official Packages, and Unmodified Builds with the required license and notices.
 
 ### You may not, without prior written permission:
+
+* Build or compile modified source code;
+* install, execute, test, use, or distribute modified builds;
 
 * modify source code;
 * modify executable or object code;
